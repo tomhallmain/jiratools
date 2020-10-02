@@ -62,10 +62,10 @@ function toggleDevPermissionsDefault() {
   setPermissions(getEditor(document), dfDevPerm)
 }
 function getEditor(baseEl) {
-  return select(('div[class*="Editor"]', baseEl)
+  return select(('div[class*="Editor"]', baseEl))
 }
 function getCommentPermissionsBtn(editorEl) {
-  select('button', select('div:nth-child(3)', editorEl?.nextSibling))
+  return select('button', select('div:nth-child(3)', editorEl?.nextSibling))
 }
 function setPermissions(editorEl, developer) {
   getCommentPermissionsBtn(editorEl)?.click()

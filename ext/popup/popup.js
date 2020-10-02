@@ -4,15 +4,15 @@
 var filterSettings = {}
 
 document.addEventListener('DOMContentLoaded', function() {
-  mapBtn('.devPermHighlight')
-  mapBtn('.devPermDefault')
+  mapBtn('.highlightDevPerm')
+  mapBtn('.defaultDevPerm')
 })
 
-function select(className) {
-  return document.querySelector(className)
+function select(selector) {
+  return document.querySelector(selector)
 }
 function mapBtn(selector) {
-  btn = select(selector)
+  const btn = select(selector)
   btn.addEventListener('click', function() { 
     btnPressed(btn.className)
   })
@@ -31,7 +31,7 @@ let activeTabParams = {
 }
 
 function sendMsg(message, filterSettings) {
-  chrome.tabs.query(activeTabParams, messagePush);
+  chrome.tabs.query(activeTabParams, messagePush)
   function messagePush(tabs) {
     console.log(message)
     console.log({'tab': tabs[0]})

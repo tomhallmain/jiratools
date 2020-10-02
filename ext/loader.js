@@ -43,9 +43,8 @@ function messageIn(message) {
 
   var event = (function(selection) {
       switch(selection) {
-        case 'devPermHighlight': return 'toggleDevPermissionsHighlight()';
-        case 'devPermDefault': return 'toggleDevPermissionsDefault()';
-        //case 'getSubdomain': messageOut();
+        case 'highlightDevPerm': return 'toggleDevPermissionsHighlight()';
+        case 'defaultDevPerm': return 'toggleDevPermissionsDefault()';
         default: console.log('Message not understood')
       }})(selection)
   console.log(event)
