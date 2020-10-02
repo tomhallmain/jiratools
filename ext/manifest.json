@@ -1,0 +1,32 @@
+{
+  "name": "Jira Tools",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "description": "Tools to enhance jira experience",
+  "content_scripts": [{
+    "matches": [
+      "https://*.atlassian.net/",
+      "https://*.atlassian.net/*"
+    ],
+    "js": [ "loader.js" ],
+    "persistent": true
+  }],
+  "browser_action": {
+    "default_icon": "jl.png",
+    "default_title": "Jira Tools",
+    "default_popup": "popup/index.html"
+  },
+  "icons": {
+    "128": "jl.png"
+  },
+  "permissions": [
+    "https://*.atlassian.net/*",
+    "http://*.atlassian.net/*",
+    "activeTab",
+    "tabs",
+    "debugger"
+  ],
+  "web_accessible_resources": [
+    "script.js"
+  ]
+}
